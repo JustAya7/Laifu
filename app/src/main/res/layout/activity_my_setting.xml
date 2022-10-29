@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayBackground"
+    android:orientation="vertical"
+    tools:context=".MySettingActivity">
+
+    <include layout="@layout/main_title_bar" />
+    <RelativeLayout
+        android:id="@+id/rl_change_psw"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+        <ImageView
+            android:id="@+id/ic_password"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:background="@drawable/ic_password"
+            android:layout_marginStart="14dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/ic_password"
+            android:layout_marginLeft="14dp"
+            android:text="修改密码"
+            android:textSize="16sp"
+            android:textColor="@color/gray_dark"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@id/ic_password" />
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/ic_right"
+            android:layout_marginEnd="30dp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#E3E3E3" />
+
+    <RelativeLayout
+        android:id="@+id/rl_logout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+    <ImageView
+        android:id="@+id/ic_logout"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="17dp"
+        android:background="@drawable/ic_logout"
+        android:layout_marginStart="17dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/ic_logout"
+        android:layout_marginLeft="17dp"
+        android:text="退出登录"
+        android:textSize="16sp"
+        android:textColor="@color/gray_dark"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@id/ic_logout" />
+
+    <ImageView
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/ic_right"
+        android:layout_marginEnd="30dp" />
+    </RelativeLayout>
+</LinearLayout>

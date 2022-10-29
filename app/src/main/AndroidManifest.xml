@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapplication">
+
+    <!-- 访问网络，进行地图相关业务数据请求，包括地图数据，路线规划，POI检索等 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 获取网络状态，根据网络状态切换进行数据请求网络转换 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 读取外置存储。如果开发者使用了so动态加载功能并且把so文件放在了外置存储区域，则需要申请该权限，否则不需要 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 写外置存储。如果开发者使用了离线地图，并且数据写在外置存储区域，则需要申请该权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name=".DemoApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="LaiFu"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AnimationAppTheme"
+        android:usesCleartextTraffic="true">
+        <service
+            android:name=".service.MQTTService"
+            android:enabled="true"
+            android:exported="true"/>
+        <service android:name="org.eclipse.paho.android.service.MqttService">
+        </service>
+        <activity
+            android:name=".LocationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MySettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ResetPswActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ModifyPswActivity"
+            android:screenOrientation="portrait" /> <!-- 调整二维码扫描界面为竖屏 -->
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="portrait"
+            tools:replace="screenOrientation" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="6kNNZ7cWWGnvsAgvbzKMLD7Y9gcxPFFS" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+    </application>
+
+</manifest>
