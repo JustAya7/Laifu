@@ -1,3 +1,2 @@
 # Laifu
-Laifu自动跟随车上位app  
-此APP配合Laifu自动跟随车使用
+新工科参赛项目来福自动跟随车上位APP
